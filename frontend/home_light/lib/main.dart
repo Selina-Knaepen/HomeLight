@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:home_light/home.dart';
 
 void main() => runApp(HomeLight());
 
-class HomeLight extends StatelessWidget {
+class HomeLight extends StatelessWidget
+{
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.amber,
       ),
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
-          backgroundColor: Colors.teal,
+          backgroundColor: Colors.amber,
           bottomNavigationBar: TabBar(
             tabs: [
               Tab(icon: Icon(Icons.home),),
@@ -25,7 +28,7 @@ class HomeLight extends StatelessWidget {
           body: TabBarView(
             physics: NeverScrollableScrollPhysics(),
             children: [
-              MyHomePage(title: 'Home'),
+              Home(title: 'Home'),
               MyHomePage(title: 'Lights'),
               MyHomePage(title: 'Automation')
             ]
@@ -36,7 +39,8 @@ class HomeLight extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatefulWidget
+{
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
@@ -44,9 +48,11 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context)
+  {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
